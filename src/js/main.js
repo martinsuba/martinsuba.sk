@@ -1,3 +1,5 @@
+import './_particles.js';
+
 var particlesConf = {
   "particles": {
     "number": {
