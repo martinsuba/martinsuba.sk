@@ -1,6 +1,6 @@
 import './_particles.js';
 
-var particlesConf = {
+const particlesConf = {
   "particles": {
     "number": {
       "value": 80,
@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const writeWord = (text, i, fnCallback) => {
 		if (i<=text.length) {
-			heading.innerHTML = text.substring(0, i)+'<span aria-hidden="true"></span>';
-			setTimeout(() => writeWord(text, i+1, fnCallback), 100);
+			heading.innerHTML = `${text.substring(0, i)}<span aria-hidden="true"></span>`;
+			setTimeout(() => writeWord(text, i + 1, fnCallback), 100);
 		}
 		else {
 			setTimeout(fnCallback, 1000);
@@ -127,12 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const newWord = (i) => {
-		if (i>=text.length) {
+		if (i >= text.length) {
 			setTimeout(() => newWord(0), 20000);
 		}
 		else {
 			let textNode = text[i];
-			writeWord(textNode, 0, () => newWord(i+1));
+			writeWord(textNode, 0, () => newWord(i + 1));
 		}
 	};
 
